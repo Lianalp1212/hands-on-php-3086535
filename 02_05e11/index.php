@@ -2,7 +2,7 @@
 
 function get_visitors()
 {
-	return file_get_contents('visits.txt');
+	return file_get_contents('./visits.txt');
 }
 
 function log_visit()
