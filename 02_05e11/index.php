@@ -44,7 +44,7 @@ function sanitize_form()
 				if (preg_match("/^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}/", $value)) {
 					echo "This phone number is valid ";
 				} else {
-					echo "Invalid, not in the (xxx) xxx-xxxx format";
+					echo "Invalid number, not in the (xxx) xxx-xxxx format";
 				}
 			default:
 				$value = filter_var(preg_replace('/[^A-Za-z0-9 \-]/', '', $value), FILTER_SANITIZE_ADD_SLASHES);
