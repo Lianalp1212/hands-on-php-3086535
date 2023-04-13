@@ -10,7 +10,6 @@ function log_visit()
 	$t = time();
 	$d = date('m/d/y h:i:s', $t);
 	$visits = file_get_contents('visits.txt');
-	$visits .=$d . "/n";
 	file_put_contents('visits.txt', $visits);
 }
 log_visit();
