@@ -12,9 +12,9 @@ function log_visit()
 	$visits .= $d . "\n";
 	file_put_contents('visits.txt', $visits, FILE_APPEND);
 }
-//log_visit();
+// log_visit();
 if (!isset($_COOKIE['visited'])) {
-	setcookie('visited', true, time() + 1000);
+	setcookie('visited', true, time() + 10);
 	log_visit();
 }
 function print_array($a)
