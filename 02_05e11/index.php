@@ -16,6 +16,8 @@ function log_visit()
 if (!isset($_COOKIE['visited'])) {
 	setcookie('visited', true, time() + 10);
 	log_visit();
+} else {
+	echo 'you alrady submitted a form';
 }
 function print_array($a)
 {
@@ -30,15 +32,15 @@ function sanitize_form()
 	foreach ($_POST as $name => $value) {
 		switch ($name) {
 			case 'email':
-				echo 'in email ';
+				// echo 'in email ';
 				$value = filter_var($value, FILTER_SANITIZE_EMAIL);
 				break;
 			case 'message':
-				echo 'in email ';
+				// echo 'in email ';
 				$value = filter_var(htmlspecialchars($value), FILTER_SANITIZE_ADD_SLASHES);
 				break;
 			case 'phone':
-				echo 'in phone number ';
+				// echo 'in phone number ';
 				if (preg_match("/^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}/", $value)) {
 					echo "This phone number is valid ";
 				} else {
