@@ -9,12 +9,12 @@ function log_visit()
 {
 	$d = date('m/d/y h:i:s');
 	$visits = file_get_contents('visits.txt');
-	$visits .= $d . '\n';
+	$visits .= $d . "\n";
 	file_put_contents('visits.txt', $visits, FILE_APPEND);
 }
 //log_visit();
 if (!isset($_COOKIE['visited'])) {
-	setcookie('visited', true, time() + (1000));
+	setcookie('visited', true, time() + 1000);
 	log_visit();
 }
 function print_array($a)
