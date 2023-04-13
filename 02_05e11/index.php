@@ -10,12 +10,12 @@ function log_visit()
 	$t = time();
 	$d = date('m/d/y h:i:s');
 	$visits = file_get_contents('visits.txt');
-	$visits .=$d . `/n`;
+	$visits .= `$d /n`;
 	file_put_contents('visits.txt', $visits, FILE_APPEND);
 }
 //log_visit();
-if ( ! isset($_COOKIE['visitied'])) {
-	setcookie('visited', true, time()+(86400*30));
+if (!isset($_COOKIE['visitied'])) {
+	setcookie('visited', true, time() + (86400 * 30));
 	log_visit();
 }
 function print_array($a)
@@ -30,7 +30,7 @@ function sanitize_form()
 	print_array($_POST);
 	foreach ($_POST as $name => $value) {
 		switch ($name) {
-		  case 'email':
+			case 'email':
 				echo 'in email ';
 				$value = filter_var($value, FILTER_SANITIZE_EMAIL);
 				break;
