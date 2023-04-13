@@ -13,11 +13,11 @@ function log_visit()
 	$visits .=$d . `/n`;
 	file_put_contents('visits.txt', $visits, FILE_APPEND);
 }
-log_visit();
-// if ( ! isset($_COOKIE['visitied'])) {
-// 	setcookie('visited', true, time()+(86400*30));
-// 	log_visit();
-// }
+//log_visit();
+if ( ! isset($_COOKIE['visitied'])) {
+	setcookie('visited', true, time()+(86400*30));
+	log_visit();
+}
 function print_array($a)
 {
 	echo '<pre>';
