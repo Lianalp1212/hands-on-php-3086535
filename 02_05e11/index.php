@@ -14,7 +14,7 @@ function log_visit()
 }
 //log_visit();
 if (!isset($_COOKIE['visited'])) {
-	setcookie('visited', true, time() + (86400 * 30));
+	setcookie('visited', true, time() + (1000));
 	log_visit();
 }
 function print_array($a)
