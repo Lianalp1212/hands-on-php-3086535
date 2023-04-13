@@ -8,9 +8,10 @@ function get_visitors()
 function log_visit()
 {
 	$t = time();
-	$d = date('m/d/y h:i:s', $t);
+	$d = date('m/d/y h:i:s');
 	$visits = file_get_contents('visits.txt');
-	file_put_contents('visits.txt', $visits);
+	$visits .=$d . `/n`;
+	file_put_contents('visits.txt', $visits, FILE_APPEND);
 }
 log_visit();
 // if ( ! isset($_COOKIE['visitied'])) {
