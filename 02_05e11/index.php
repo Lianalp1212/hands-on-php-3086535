@@ -12,13 +12,13 @@ function log_visit()
 	$visits .= $d . "\n";
 	file_put_contents('visits.txt', $visits, FILE_APPEND);
 }
-// log_visit();
-if (!isset($_COOKIE['visited'])) {
-	setcookie('visited', true, time() + 10);
-	log_visit();
-} else {
-	echo 'you alrady submitted a form';
-}
+ log_visit();
+// if (!isset($_COOKIE['visited'])) {
+// 	setcookie('visited', true, time() + 10);
+// 	log_visit();
+// } else {
+// 	echo 'you alrady submitted a form';
+// }
 function print_array($a)
 {
 	echo '<pre>';
